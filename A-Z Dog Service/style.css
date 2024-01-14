@@ -1,77 +1,11 @@
-/* *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.hero{
-    height: 100vh;
-    width: 100%;
-    background-image: url("dogBackground2.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 40px;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-.logo{
-    height: 50px;
-    width: 50px;
-    transition: .4s;
-}
-
-.logo:hover{
-    transform: scale(1.3);
-    cursor: pointer; 
-}
-nav ul li{
-    list-style-type: none;
-    display: inline-block;
-    padding: 10px 20px;
-}
-
-nav ul li a{
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover{
-    color: blue;
-    transition: .3s;
-}
-
-button{
-    border: none;
-    background: red;
-    padding: 12px 30px;
-    color: white;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 15px;
-    transition: .4s;
-}
-
-button:hover{
-    transform: scale(1.3);
-    cursor: pointer;
-} */
-
-
-/* -------------------------------------- */
 body{
     background: url("dogBackground2.jpg") rgba(0,0,0,0.3);
     background-blend-mode: multiply;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
 }
 .logo{
     height: 40px;
@@ -83,8 +17,6 @@ body{
     cursor: pointer; 
 }
 
-
-
 /* @media all and (max-width: 991px){
     WRITTEN THIS IN STYLE TAG IN HTML FILE AS IT WAS NOT WORKING
 
@@ -95,3 +27,162 @@ body{
 } */
 
 /*-----------nav bar ended--------------- */
+
+
+/*---------Login Part CSS----------*/
+
+.wrapper{
+    align-items: center;
+    margin-left: 35%;
+    margin-top: 5%;
+
+    position: relative;
+    background: transparent;
+    border: 2px solid rgba(225,225,225,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+
+    /* overflow: hidden; For cross design */
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login{
+    /* display: none; */
+}
+
+.wrapper .form-box.register{
+    position: absolute;
+    /* transform: translateY(400px); */
+    margin-right: -200%;
+}
+
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.wrapper h2{
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px /*So that pass/email dont appear on icon*/
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px ;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.remember-forgot{
+    font-size: 0.9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input{
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forgot a { /*forgot password*/
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #162938 !important; 
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.login-register{
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a{
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+/*---------Login Part CSS ENDED----------*/

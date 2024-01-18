@@ -19,16 +19,31 @@
             }
         }
 
-        .wrapper{
+        .wrapper {
             width: 400px;
             height: 400px;
+            transition: height .2s ease;
+        }
+
+        .wrapper.active {
+            height: 475px;
+        }
+
+        .wrapper.active .form-box.login {
+            transition: none;
+            transform: translateX(-400px);
+        }
+
+        .wrapper.active .form-box.register {
+            transition: transform .18s ease;
+            transform: translateX(0);
         }
     </style>
 </head>
 
 <body class="vh-100 overflow-hidden">
 
-<!-- ----------------NAV-BAR BS ---------------------->
+    <!-- ----------------NAV-BAR BS ---------------------->
 
     <!-- 
     ---ADDED(in nav)---
@@ -79,13 +94,14 @@
                 <!-- Sidebar Header -->
                 <div class="offcanvas-header text-white border-bottom">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img class="logo"
-                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmplNzNramtsMDY1bGlpNWdycXd2dnJmcDdrdXBqM2ZxMnBpOWljZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/co62TbJyuDwWVeXMfK/giphy.gif"
-                        alt="" srcset=""></h5>
+                            src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmplNzNramtsMDY1bGlpNWdycXd2dnJmcDdrdXBqM2ZxMnBpOWljZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/co62TbJyuDwWVeXMfK/giphy.gif"
+                            alt="" srcset=""></h5>
                     <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
                 <!-- Sidebar Body -->
-                <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0"> <!--d-flex and flex-column p4 for moving login-sign up at bottom, p-lg-0 to reduce top margin in large size-->
+                <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+                    <!--d-flex and flex-column p4 for moving login-sign up at bottom, p-lg-0 to reduce top margin in large size-->
                     <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3">
                         <li class="nav-item mx-2 fs-5">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -129,33 +145,49 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form> -->
-                <!--Login/Signup-->
-                <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                    <a href="#login" class="text-white fs-5">Login</a>
-                    <a href="#signup" class="text-white text-decoration-none px-3 py-1 rounded-4 fs-5" style="background-color: #f94ca4;">Sign Up</a>
-                </div>
+                    <!--Login/Signup-->
+                    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+
+                        <a href="#login" id="button" class="text-white fs-5">Login</a>
+
+                        <a href="#signup" class="text-white text-decoration-none px-3 py-1 rounded-4 fs-5"
+                            style="background-color: #f94ca4;">Sign Up</a>
+                    </div>
 
                 </div>
             </div>
         </div>
     </nav>
 
+    
+
     <!-- ----------------NAV-BAR BS ENDED------------------- -->
 
+    <!-- Script for openning login page on button -->
+
+    <script>
+        document.getElementById("button").addEventListener("click",function(){
+            document.querySelector(".wrapper").style.display="flex";
+        })
+
+        document.getElementById("close_btn").addEventListener("click",function(){
+            document.querySelector(".wrapper").style.display="none";
+        })
+    </script>
+    
     <!-- ----------------LOGIN------------------- -->
 
     <div class="wrapper">
-        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <span class="icon-close" id="close_btn"><ion-icon name="close"></ion-icon></span>
 
         <div class="form-box login">
             <h2>Login</h2>
             <form action="#">
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
                     <input type="email" required>
                     <label>Email</label>
                 </div>
-
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     <input type="password" required>
@@ -168,38 +200,45 @@
                 </div>
                 <button type="submit" class="btn">Login</button>
                 <div class="login-register">
-                    <p>Don't have an account<a href="#" class="register-link">Register</a></p>
+                    <p>Don't have an account <a href="#" class="register-link">Register</a></p>
                 </div>
             </form>
         </div>
 
-        <!-- Registration Part -->
+    <!-- Registration Part -->
 
-        <div class="form-box register">
-            <h2>Registration</h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required>
-                    <label>Email</label>
-                </div>
+    <div class="form-box register">
+        <h2>Registration</h2>
+        <form action="#">
 
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required>
-                    <label>Password</label>
-                </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="text" required>
+                <label>Username</label>
+            </div>
 
-                <div class="remember-forgot">
-                    <label><input type="checkbox">I agree to the terms & conditions</label>
-        
-                </div>
-                <button type="submit" class="btn">Register</button>
-                <div class="login-register">
-                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
-                </div>
-            </form>
-        </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" required>
+                <label>Email</label>
+            </div>
+
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox">I agree to the terms & conditions</label>
+
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <div class="login-register">
+                <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+            </div>
+        </form>
+    </div>
     </div>
 
 
@@ -207,7 +246,7 @@
 
 
 
-
+    <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

@@ -45,7 +45,7 @@ body{
     display: flex;
     justify-content: center;
 
-    /* overflow: hidden; For cross design */
+    overflow: hidden; /*For cross design*/ 
 }
 
 .wrapper .form-box{
@@ -54,13 +54,15 @@ body{
 }
 
 .wrapper .form-box.login{
-    /* display: none; */
+    transition: transform .18s ease;
+    transform: translateX(0);
 }
 
 .wrapper .form-box.register{
     position: absolute;
-    /* transform: translateY(400px); */
-    margin-right: -200%;
+    transition: none;
+    transform: translateX(400px);
+    /* margin-right: -200%; */
 }
 
 .wrapper .icon-close{

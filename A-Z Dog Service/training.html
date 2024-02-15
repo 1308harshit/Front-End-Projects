@@ -13,6 +13,108 @@
         crossorigin="anonymous"></script>
     <title>Document</title>
 
+    <script>
+        function openloading() {
+            document.getElementById('show-btn').style.display = "none";
+            document.getElementById('r1').style.display = "block";
+            document.getElementById('map').style.display = "none";
+            setTimeout(() => {
+                document.getElementById('r1').style.display = "none";
+                var a = document.getElementById('map');
+                a.style.display = "block"
+            }, 3000);
+        }
+    </script>
+
+    <style>
+        /* LOADING CSS */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ring {
+            display: none;
+
+            position: absolute;
+            top: 450%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: transparent;
+            border: 3px solid #3c3c3c;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 150px;
+            font-family: sans-serif;
+            font-size: 20px;
+            color: #fff000;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #fff000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+        }
+
+        .ring:before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top: 3px solid #fff000;
+            border-right: 3px solid #fff000;
+            border-radius: 50%;
+            animation: animateC 2s linear infinite;
+        }
+
+        .ring-span {
+            display: block;
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 50%;
+            width: 50%;
+            height: 4px;
+            background: transparent;
+            transform-origin: left;
+            animation: animate 2s linear infinite;
+        }
+
+        .ring-span:before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #fff000;
+            top: -6px;
+            right: -8px;
+            box-shadow: 0 0 20px #fff000;
+        }
+
+        @keyframes animateC {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(45deg);
+            }
+
+            100% {
+                transform: rotate(405deg);
+            }
+        }
+    </style>
+
     <!-- Home page CSS -->
     <style>
         body {
@@ -71,24 +173,87 @@
             transform: translateX(0);
         }
     </style>
-
     <!-- Home page CSS Over -->
-</head>
 
+    <!-- button style -->
+    <style>
+        .btn-64 {
+            align-items: center;
+            background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+            border: 0;
+            border-radius: 8px;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            display: flex;
+            font-family: Phantomsans, sans-serif;
+            font-size: 20px;
+            justify-content: center;
+            line-height: 1em;
+            max-width: 100%;
+            min-width: 140px;
+            padding: 3px;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            cursor: pointer;
+            margin-top : 500px;
+            margin-left: 520px;
+        }
+
+        .btn-64:active,
+        .btn-64:hover {
+            outline: 0;
+        }
+
+        .btn-64 .btn-span {
+            background-color: rgb(5, 6, 45);
+            padding: 16px 24px;
+            border-radius: 6px;
+            width: 100%;
+            height: 100%;
+            transition: 300ms;
+        }
+
+        .btn-64:hover .btn-span {
+            background: none;
+        }
+
+        @media (min-width: 768px) {
+            .btn-64 {
+                font-size: 24px;
+                min-width: 196px;
+            }
+        }
+    </style>
+
+
+
+</head>
 <body>
     <video id="background-video" autoplay loop muted>
         <source src="training.mp4" type="video/mp4">
     </video>
 
+
+    <!-- <button onclick="openloading()" class="btn-64">HELLO</button> -->
+    
+
+
     <!-- Our NavBar -->
 
     <nav class="pos navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
+
             <!-- Logo -->
+
             <a class="navbar-brand fs-4" href="#"><img class="logo"
                     src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmplNzNramtsMDY1bGlpNWdycXd2dnJmcDdrdXBqM2ZxMnBpOWljZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/co62TbJyuDwWVeXMfK/giphy.gif"
                     alt="" srcset=""></a>
             <!-- Toogle button -->
+
             <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -97,6 +262,7 @@
             <!--Side bar-->
             <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
+
                 <!-- Sidebar Header -->
                 <div class="offcanvas-header text-white border-bottom">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img class="logo"
@@ -104,10 +270,10 @@
                             alt="" srcset=""></h5>
                     <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
+
                 </div>
                 <!-- Sidebar Body -->
                 <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-                    <!--d-flex and flex-column p4 for moving login-sign up at bottom, p-lg-0 to reduce top margin in large size-->
                     <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3">
                         <li class="nav-item mx-2 fs-5">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -152,10 +318,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <!-- <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> -->
+
                     <!--Login/Signup-->
                     <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
 
@@ -227,21 +390,17 @@
           </select>
     </div> -->
 
-<div class="d-flex justify-content-center">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1Dkm_1NquKDC00HWgS52aw881T6MHAdU&ehbc=2E312F&noprof=1" width="75%" height="525" style="position: relative; margin-top: 10px;
-	border-radius: 10px;position:relative;"></iframe>
-</div>
-    
-<script>
+    <div class="d-flex justify-content-center"></div>
+    <iframe id="map" src="https://www.google.com/maps/d/embed?mid=1Dkm_1NquKDC00HWgS52aw881T6MHAdU&ehbc=2E312F&noprof=1"
+        width="75%" height="500 " style="position: relative; margin-top: 10px;
+	border-radius: 10px;position:relative;margin-left: 13%;display: none; "></iframe>
+    </div>
 
-    setTimeout(loading,3000);
+    <div class="ring" id="r1">Loading
+        <span class="ring-span"></span>
+    </div>
 
-    function loading(){
-        window.open('training.html');
-    }
-
-</script>
-    
+    <button class="btn-64" id="show-btn" onclick="openloading()" role="button"><span class="text btn-span">View Results</span></button>
 </body>
 
 </html>

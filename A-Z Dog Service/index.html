@@ -124,7 +124,7 @@
                                 Additional Services
                             </a>
                             <ul class="dropdown-menu ">
-                                <li><a class="dropdown-item" href="#">Training Centers</a></li>
+                                <li><a class="dropdown-item" onclick="openloading()" href="#">Training Centers</a></li>
                                 <li><a class="dropdown-item" href="#">Grooming Centers</a></li>
                                 <li><a class="dropdown-item" href="#shop1.html">Day-care Centers</a></li>
                             </ul>
@@ -178,6 +178,10 @@
         document.getElementById("close_btn").addEventListener("click",function(){
             document.querySelector(".wrapper").style.display="none";
         })
+
+        function openloading(){
+            window.open("loading.html")
+        }
     </script>
     
     <!-- ----------------LOGIN------------------- -->

@@ -12,6 +12,99 @@
         crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* background: none; */
+
+        }
+
+        .ring {
+            display: none;
+
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: transparent;
+            border: 3px solid #3c3c3c;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 150px;
+            font-family: sans-serif;
+            font-size: 20px;
+            color: #fff000;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #fff000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+        }
+
+        .ring:before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top: 3px solid #fff000;
+            border-right: 3px solid #fff000;
+            border-radius: 50%;
+            animation: animateC 2s linear infinite;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 50%;
+            width: 50%;
+            height: 4px;
+            background: transparent;
+            transform-origin: left;
+            animation: animate 2s linear infinite;
+        }
+
+        span:before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #fff000;
+            top: -6px;
+            right: -8px;
+            box-shadow: 0 0 20px #fff000;
+        }
+
+        @keyframes animateC {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(45deg);
+            }
+
+            100% {
+                transform: rotate(405deg);
+            }
+        }
+    </style>
+    <script>
+
+    </script>
+    <style>
         @media all and (max-width: 991px) {
             .sidebar {
                 background-color: rgba(225, 225, 225, 0.5);
@@ -119,8 +212,8 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-2 fs-5" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle mx-2 fs-5" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Additional Services
                             </a>
                             <ul class="dropdown-menu ">
@@ -131,8 +224,8 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-2 fs-5" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle mx-2 fs-5" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu ">
@@ -164,26 +257,33 @@
         </div>
     </nav>
 
-    
+
 
     <!-- ----------------NAV-BAR BS ENDED------------------- -->
 
     <!-- Script for openning login page on button -->
 
     <script>
-        document.getElementById("button").addEventListener("click",function(){
-            document.querySelector(".wrapper").style.display="flex";
+        document.getElementById("button").addEventListener("click", function () {
+            document.querySelector(".wrapper").style.display = "flex";
         })
 
-        document.getElementById("close_btn").addEventListener("click",function(){
-            document.querySelector(".wrapper").style.display="none";
+        document.getElementById("close_btn").addEventListener("click", function () {
+            document.querySelector(".wrapper").style.display = "none";
         })
 
-        function openloading(){
-            window.open("loading.html")
+        function openloading() {
+            // window.open("loading.html")
+
+            document.getElementById('r1').style.display = "block";
+
+            setTimeout(() => {
+                document.getElementById('r1').style.display = "none";
+                window.open("training.html");
+            }, 3000);
         }
     </script>
-    
+
     <!-- ----------------LOGIN------------------- -->
 
     <div class="wrapper">
@@ -214,40 +314,44 @@
             </form>
         </div>
 
-    <!-- Registration Part -->
+        <!-- Registration Part -->
 
-    <div class="form-box register">
-        <h2>Registration</h2>
-        <form action="#">
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
 
-            <div class="input-box">
-                <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                <input type="text" required>
-                <label>Username</label>
-            </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
 
-            <div class="input-box">
-                <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                <input type="email" required>
-                <label>Email</label>
-            </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
 
-            <div class="input-box">
-                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password" required>
-                <label>Password</label>
-            </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
 
-            <div class="remember-forgot">
-                <label><input type="checkbox">I agree to the terms & conditions</label>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to the terms & conditions</label>
 
-            </div>
-            <button type="submit" class="btn">Register</button>
-            <div class="login-register">
-                <p>Already have an account? <a href="#" class="login-link">Login</a></p>
-            </div>
-        </form>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
     </div>
+
+    <div class="ring" id="r1">Loading
+        <span></span>
     </div>
 
     <script src="script.js"></script>

@@ -6,11 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <title>Document</title>
 
     <script>
@@ -199,7 +203,7 @@
             touch-action: manipulation;
             white-space: nowrap;
             cursor: pointer;
-            margin-top : 500px;
+            margin-top: 500px;
             margin-left: 520px;
         }
 
@@ -232,163 +236,24 @@
 
 
 </head>
+
 <body>
     <video id="background-video" autoplay loop muted>
         <source src="training.mp4" type="video/mp4">
     </video>
 
+<!-- Our NavBar -->
+    <div id="myNavbar">
 
-    <!-- <button onclick="openloading()" class="btn-64">HELLO</button> -->
+    </div>
+    <script>
+        $(function () {
+            $("#myNavbar").load("navbarWithoutLogin.html");
+        });
+    </script>
     
-
-
-    <!-- Our NavBar -->
-
-    <nav class="pos navbar navbar-expand-lg navbar-dark bg-transparent">
-        <div class="container">
-
-            <!-- Logo -->
-
-            <a class="navbar-brand fs-4" href="#"><img class="logo"
-                    src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmplNzNramtsMDY1bGlpNWdycXd2dnJmcDdrdXBqM2ZxMnBpOWljZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/co62TbJyuDwWVeXMfK/giphy.gif"
-                    alt="" srcset=""></a>
-            <!-- Toogle button -->
-
-            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!--Side bar-->
-            <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-
-                <!-- Sidebar Header -->
-                <div class="offcanvas-header text-white border-bottom">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img class="logo"
-                            src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmplNzNramtsMDY1bGlpNWdycXd2dnJmcDdrdXBqM2ZxMnBpOWljZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/co62TbJyuDwWVeXMfK/giphy.gif"
-                            alt="" srcset=""></h5>
-                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-
-                </div>
-                <!-- Sidebar Body -->
-                <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-                    <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3">
-                        <li class="nav-item mx-2 fs-5">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item mx-2 fs-5">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-
-                        <li class="nav-item mx-2 fs-5">
-                            <a class="nav-link" href="#about">Vet?</a>
-                        </li>
-
-                        <li class="nav-item mx-2 fs-5">
-                            <a class="nav-link" href="#about">Friendly places!</span></a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-2 fs-5" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Additional Services
-                            </a>
-                            <ul class="dropdown-menu ">
-                                <li><a class="dropdown-item" href="#">Training Centers</a></li>
-                                <li><a class="dropdown-item" href="#">Grooming Centers</a></li>
-                                <li><a class="dropdown-item" href="#shop1.html">Day-care Centers</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle mx-2 fs-5" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu ">
-                                <li><a class="dropdown-item" href="#">Food</a></li>
-                                <li><a class="dropdown-item" href="#">Medicines</a></li>
-                                <li><a class="dropdown-item" href="#shop1.html">Others</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <!--Login/Signup-->
-                    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-
-                        <a href="#login" id="button" class="text-white fs-5">Login</a>
-
-                        <a href="#signup" class="text-white text-decoration-none px-3 py-1 rounded-4 fs-5"
-                            style="background-color: #f94ca4;">Sign Up</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </nav>
     <!-- Navbar over -->
 
-    <!-- <div class="d-flex justify-content-center">
-        <select class="selArea form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-            <option selected>Select your area</option>
-            <option value="1" onclick="">132 Feet Ring Road</option>
-            <option value="2">Ambli</option>
-            <option value="4">AnandNagar</option>
-            <option value="5">Ashram Road</option>
-            <option value="6">Bhadaj</option>
-            <option value="7">Bodakdev</option>
-            <option value="8">Bopal</option>
-            <option value="9">CG Road</option>
-            <option value="10">Chandkheda</option>
-            <option value="11">Ellis Bridge</option>
-            <option value="12">Gita Mandir</option>
-            <option value="13">Gurkul</option>
-            <option value="14">Isanpur</option>
-            <option value="15">Isckon</option>
-            <option value="16">Jivrajpark</option>
-            <option value="17">Jodhpur Cross Road</option>
-            <option value="18">Juhapura</option>
-            <option value="19">Kankaria</option>
-            <option value="20">Makarba</option>
-            <option value="21">Maninagar</option>
-            <option value="22">Memnagar</option>
-            <option value="23">Motera</option>
-            <option value="24">Naroda</option>
-            <option value="25">Naranpura</option>
-            <option value="26">Narolgam</option>
-            <option value="27">Navrangpura</option>
-            <option value="28">Nehrunanagr</option>
-            <option value="29">Nikol</option>
-            <option value="30">Nava Wadaj</option>
-            <option value="31">Paldi</option>
-            <option value="32">Pipali</option>
-            <option value="33">Ramdev Nagar</option>
-            <option value="34">Ranip</option>
-            <option value="35">Sarkhej</option>
-            <option value="36">Satellite</option>
-            <option value="37">Science City</option>
-            <option value="38">Shahibaug</option>
-            <option value="39">Shashtri Nagar</option>
-            <option value="40">Shyamal</option>
-            <option value="41">Sola</option>
-            <option value="42">SouthBopal</option>
-            <option value="43">SP Ring Road</option>
-            <option value="44">Sanand</option>
-            <option value="45">Sanand Circle</option>
-            <option value="46">SG Highway</option>
-            <option value="47">Thaltej</option>
-            <option value="48">Usmanpura</option>
-            <option value="49">Vastrapur</option>
-            <option value="50">Vasna</option>
-            <option value="51">Vejalpur</option> 
-          </select>
-    </div> -->
 
     <div class="d-flex justify-content-center"></div>
     <iframe id="map" src="https://www.google.com/maps/d/embed?mid=1Dkm_1NquKDC00HWgS52aw881T6MHAdU&ehbc=2E312F&noprof=1"
@@ -400,7 +265,8 @@
         <span class="ring-span"></span>
     </div>
 
-    <button class="btn-64" id="show-btn" onclick="openloading()" role="button"><span class="text btn-span">View Results</span></button>
+    <button class="btn-64" id="show-btn" onclick="openloading()" role="button"><span class="text btn-span">View
+            Results</span></button>
 </body>
 
 </html>

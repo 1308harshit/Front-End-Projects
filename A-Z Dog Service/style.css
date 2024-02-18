@@ -17,14 +17,6 @@ body{
     cursor: pointer; 
 }
 
-/* @media all and (max-width: 991px){
-    WRITTEN THIS IN STYLE TAG IN HTML FILE AS IT WAS NOT WORKING
-
-    .sidebar{
-        background-color: rgba(225,225,225,0.5);
-        backdrop-filter: blur(10px);
-    }
-} */
 
 /*-----------nav bar ended--------------- */
 
@@ -188,3 +180,4 @@ body{
 }
 
 /*---------Login Part CSS ENDED----------*/
+
